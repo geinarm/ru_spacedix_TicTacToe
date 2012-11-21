@@ -5,11 +5,12 @@
 1352929526 /Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/src/headers/counter.h
 	<iostream>
 
-1353525344 source:/Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/src/main.cpp
+1353538478 source:/Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/src/main.cpp
 	<iostream>
+	<cstring>
 	"include/counter.h"
 
-1353525330 source:/Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/test/testCounter.cpp
+1353527882 source:/Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/test/testCounter.cpp
 	"../src/include/counter.h"
 	"gtest/gtest.h"
 

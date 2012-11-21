@@ -2,3 +2,9 @@
 *.xcuserstate
 
 *.xcuserstate
+
+*.layout
+
+bin/
+
+obj/

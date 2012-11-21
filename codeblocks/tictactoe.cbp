@@ -47,6 +47,10 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="../src/counter.cpp" />
+		<Unit filename="../src/include/counter.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
 		<Unit filename="../src/main.cpp">
 			<Option target="Debug" />
 			<Option target="Release" />
