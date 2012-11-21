@@ -22,9 +22,36 @@
 				</Linker>
 			</Target>
 		</Build>
-		<Unit filename="main.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="../include/gtest/gtest-death-test.h" />
+		<Unit filename="../include/gtest/gtest-message.h" />
+		<Unit filename="../include/gtest/gtest-param-test.h" />
+		<Unit filename="../include/gtest/gtest-printers.h" />
+		<Unit filename="../include/gtest/gtest-spi.h" />
+		<Unit filename="../include/gtest/gtest-test-part.h" />
+		<Unit filename="../include/gtest/gtest-typed-test.h" />
+		<Unit filename="../include/gtest/gtest.h" />
+		<Unit filename="../include/gtest/gtest_pred_impl.h" />
+		<Unit filename="../include/gtest/gtest_prod.h" />
+		<Unit filename="../include/gtest/internal/gtest-death-test-internal.h" />
+		<Unit filename="../include/gtest/internal/gtest-filepath.h" />
+		<Unit filename="../include/gtest/internal/gtest-internal.h" />
+		<Unit filename="../include/gtest/internal/gtest-linked_ptr.h" />
+		<Unit filename="../include/gtest/internal/gtest-param-util-generated.h" />
+		<Unit filename="../include/gtest/internal/gtest-param-util.h" />
+		<Unit filename="../include/gtest/internal/gtest-port.h" />
+		<Unit filename="../include/gtest/internal/gtest-string.h" />
+		<Unit filename="../include/gtest/internal/gtest-tuple.h" />
+		<Unit filename="../include/gtest/internal/gtest-type-util.h" />
+		<Unit filename="../src/gtest-all.cc" />
+		<Unit filename="../src/gtest-death-test.cc" />
+		<Unit filename="../src/gtest-filepath.cc" />
+		<Unit filename="../src/gtest-internal-inl.h" />
+		<Unit filename="../src/gtest-port.cc" />
+		<Unit filename="../src/gtest-printers.cc" />
+		<Unit filename="../src/gtest-test-part.cc" />
+		<Unit filename="../src/gtest-typed-test.cc" />
+		<Unit filename="../src/gtest.cc" />
+		<Unit filename="../src/gtest_main.cc" />
 		<Extensions>
 			<code_completion />
 			<envvars />
