@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <cstring>
 #include "include/counter.h"
 
 char input[64];
