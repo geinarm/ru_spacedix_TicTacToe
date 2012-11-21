@@ -27,37 +27,12 @@
 					<Add option="-s" />
 				</Linker>
 			</Target>
-			<Target title="tictactoe_test">
-				<Option output="tictactoe_test" prefix_auto="1" extension_auto="1" />
-				<Option external_deps="../gtest/codeblocks/libgtest.a;" />
-				<Option type="0" />
-				<Option compiler="gcc" />
-				<Compiler>
-					<Add directory="../src" />
-					<Add directory="../test" />
-					<Add directory="../gtest/include" />
-				</Compiler>
-				<Linker>
-					<Add library="../gtest/codeblocks/libgtest.a" />
-				</Linker>
-			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="../src/counter.cpp" />
-		<Unit filename="../src/counter.h">
-			<Option target="Debug" />
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="../src/main.cpp">
-			<Option target="Debug" />
-			<Option target="Release" />
-		</Unit>
-		<Unit filename="../test/testCounter.cpp">
-			<Option target="tictactoe_test" />
-		</Unit>
+		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
