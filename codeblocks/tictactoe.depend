@@ -306,3 +306,18 @@
 
 1353531538 /home/hjolli/TTT/ru_spacedix_TicTacToe/gtest/include/gtest/gtest_pred_impl.h
 
+1353550655 source:e:\myprojects\ru_spacedix_tictactoe\test\testcounter.cpp
+	"../src/include/counter.h"
+	"gtest/gtest.h"
+
+1353550655 e:\myprojects\ru_spacedix_tictactoe\src\include\counter.h
+	<iostream>
+
+1353550655 source:e:\myprojects\ru_spacedix_tictactoe\src\counter.cpp
+	"include/counter.h"
+
+1353550655 source:e:\myprojects\ru_spacedix_tictactoe\src\main.cpp
+	<iostream>
+	<cstring>
+	"include/counter.h"
+
