@@ -18,3 +18,5 @@ codeblocks/tictactoe_test
 *.a
 
 *.exe
+
+*.depend
