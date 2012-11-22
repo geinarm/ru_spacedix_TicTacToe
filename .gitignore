@@ -14,3 +14,7 @@ obj/
 codeblocks/tictactoe_test
 
 *.o
+
+*.a
+
+*.exe
