@@ -6,20 +6,33 @@
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
-			<Target title="Release">
-				<Option output="libgtest" prefix_auto="1" extension_auto="1" />
+			<Target title="libgtest_mac">
+				<Option platforms="Mac;" />
+				<Option output="../../lib/libgtest_mac" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="obj/Release/" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
 				<Compiler>
-					<Add option="-Wall" />
-					<Add option="-O2" />
+					<Add directory="../../gtest" />
+					<Add directory="../include" />
 				</Compiler>
-				<Linker>
-					<Add option="-s" />
-				</Linker>
+			</Target>
+			<Target title="libgtest_windows">
+				<Option platforms="Windows;" />
+				<Option output="../../lib/libgtest_win" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+			</Target>
+			<Target title="libgtest_linux">
+				<Option platforms="Unix;" />
+				<Option output="../../lib/libgtest_linux" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
 			</Target>
 		</Build>
 		<Unit filename="../include/gtest/gtest-death-test.h" />

@@ -38,7 +38,7 @@
 					<Add directory="../gtest/include" />
 				</Compiler>
 				<Linker>
-					<Add library="../gtest/codeblocks/libgtest.a" />
+					<Add library="../lib/libgtest_mac.a" />
 				</Linker>
 			</Target>
 		</Build>
