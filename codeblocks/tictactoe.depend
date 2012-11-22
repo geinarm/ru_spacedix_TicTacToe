@@ -2,8 +2,12 @@
 1353525339 source:/Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/src/counter.cpp
 	"include/counter.h"
 
+1353550655 ounter.h"
+
 1352929526 /Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/src/headers/counter.h
 	<iostream>
+
+1353550655 
 
 1353538478 source:/Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/src/main.cpp
 	<iostream>
@@ -13,6 +17,8 @@
 1353527882 source:/Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/test/testCounter.cpp
 	"../src/include/counter.h"
 	"gtest/gtest.h"
+
+1353550655 st.h"
 
 1352046839 /Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/gtest/include/gtest/gtest.h
 	<limits>
@@ -29,6 +35,8 @@
 	"gtest/gtest-typed-test.h"
 	"gtest/gtest_pred_impl.h"
 
+1353531538 st_pred_impl.h"
+
 1352046839 /Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/gtest/include/gtest/internal/gtest-internal.h
 	"gtest/internal/gtest-port.h"
 	<stdlib.h>
@@ -43,6 +51,8 @@
 	"gtest/internal/gtest-string.h"
 	"gtest/internal/gtest-filepath.h"
 	"gtest/internal/gtest-type-util.h"
+
+1353531538 ernal/gtest-type-util.h"
 
 1352046839 /Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/gtest/include/gtest/internal/gtest-port.h
 	<ctype.h>
@@ -74,6 +84,8 @@
 	<tuple>
 	<vector>
 
+1353531538 
+
 1352046839 /Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/gtest/include/gtest/internal/gtest-tuple.h
 	<utility>
 
@@ -83,8 +95,12 @@
 	<string>
 	"gtest/internal/gtest-port.h"
 
+1353531538 ernal/gtest-port.h"
+
 1352046839 /Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/gtest/include/gtest/internal/gtest-filepath.h
 	"gtest/internal/gtest-string.h"
+
+1353531538 ernal/gtest-string.h"
 
 1352046839 /Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/gtest/include/gtest/internal/gtest-type-util.h
 	"gtest/internal/gtest-port.h"
@@ -92,8 +108,12 @@
 	<cxxabi.h>
 	<acxx_demangle.h>
 
+1353531538 ngle.h>
+
 1352046839 /Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/gtest/include/gtest/gtest-death-test.h
 	"gtest/internal/gtest-death-test-internal.h"
+
+1353531538 ernal/gtest-death-test-internal.h"
 
 1352046839 /Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/gtest/include/gtest/internal/gtest-death-test-internal.h
 	"gtest/internal/gtest-internal.h"
@@ -104,12 +124,16 @@
 	"gtest/internal/gtest-string.h"
 	"gtest/internal/gtest-internal.h"
 
+1353531538 ernal/gtest-internal.h"
+
 1352046839 /Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/gtest/include/gtest/gtest-param-test.h
 	"gtest/internal/gtest-port.h"
 	<utility>
 	"gtest/internal/gtest-internal.h"
 	"gtest/internal/gtest-param-util.h"
 	"gtest/internal/gtest-param-util-generated.h"
+
+1353531538 ernal/gtest-param-util-generated.h"
 
 1352046839 /Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/gtest/include/gtest/internal/gtest-param-util.h
 	<iterator>
@@ -119,6 +143,8 @@
 	"gtest/internal/gtest-linked_ptr.h"
 	"gtest/internal/gtest-port.h"
 	"gtest/gtest-printers.h"
+
+1353531538 st-printers.h"
 
 1352046839 /Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/gtest/include/gtest/internal/gtest-linked_ptr.h
 	<stdlib.h>
@@ -317,6 +343,17 @@
 	"include/counter.h"
 
 1353550655 source:e:\myprojects\ru_spacedix_tictactoe\src\main.cpp
+	<iostream>
+	<cstring>
+	"include/counter.h"
+
+1353525339 source:/Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/src/counter.cpp
+	"include/counter.h"
+
+1352929526 /Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/src/include/counter.h
+	<iostream>
+
+1353538478 source:/Users/geinarm/Documents/workspace/SchoolRepositories/ru_spacedix_TicTacToe/src/main.cpp
 	<iostream>
 	<cstring>
 	"include/counter.h"
