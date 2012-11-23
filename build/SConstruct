@@ -1,0 +1,37 @@
+#initialize the environment
+env = Environment()
+
+#Just some variables
+headersPath = '../src/include/'
+sourcePath = '../src/'
+sources = ['../src/main.cpp', '../src/counter.cpp']
+test_sources = ['../test/testCounter.cpp', '../src/counter.cpp']
+
+#Tell scons were stuff is
+env.Append(CPPPATH = [headersPath, '../gtest/include/', '../gtest/', '../gtest/internal/', '../gtest/src/'])
+env.Append(LIBPATH = ['../lib/'])
+
+#Create a build target
+tictactoe = env.Program(target='tictactoe', source = sources)
+
+libgtest = env.Program(target='libgtest', source = ['../gtest/src/gtest-all.cc'])
+
+
+#Program( 'test', test_sources, LIBS=['gtest'], LIBPATH='../lib/' )
+
+#Set default target
+Default(tictactoe)
+
+
+#test = Command( target = "tictactoe_test",
+#                source = "./tictactoe",
+#                action = "./tictactoe > $TARGET" )
+
+#Build condition
+#Depends( test, tictactoe )
+#AlwaysBuild( test )
+
+#Runs ls command after build, not shure how this works
+#ls = Command ('ls', None, 'ls')
+#AlwaysBuild ('ls')
+#Default ('ls')
