@@ -2,19 +2,45 @@
 env = Environment()
 
 #Just some variables
-headersPath = '../src/include/'
 sourcePath = '../src/'
-sources = ['../src/main.cpp', '../src/counter.cpp']
-test_sources = ['../test/testCounter.cpp', '../src/counter.cpp']
+
+headers = ['../gtest/include/', 
+            '../gtest/',
+            '../gtest/internal/', 
+            '../gtest/src/'
+            ]
+
+libgtest_sources = ['../gtest/src/gtest.cc',
+                    '../gtest/src/gtest_main.cc',
+                    '../gtest/src/gtest-death-test.cc',
+                    '../gtest/src/gtest-filepath.cc',
+                    '../gtest/src/gtest-port.cc',
+                    '../gtest/src/gtest-printers.cc',
+                    '../gtest/src/gtest-test-part.cc',
+                    '../gtest/src/gtest-typed-test.cc'
+                    ]
+
+test_sources = ['../test/testCounter.cpp', 
+                '../src/counter.cpp'
+                ]
+
+tictactoe_sources = ['../src/main.cpp', 
+                    '../src/counter.cpp'
+                    ]
+
 
 #Tell scons were stuff is
-env.Append(CPPPATH = [headersPath, '../gtest/include/', '../gtest/', '../gtest/internal/', '../gtest/src/'])
+env.Append(CPPPATH = headers)
 env.Append(LIBPATH = ['../lib/'])
 
+r = '../gtest/src/gtest-'
+root = '../gtest/src/'
 #Create a build target
-tictactoe = env.Program(target='tictactoe', source = sources)
+tictactoe = env.Program(target='tictactoe', source = tictactoe_sources)
 
-libgtest = env.Program(target='libgtest', source = ['../gtest/src/gtest-all.cc'])
+libgtest = env.Program(target='libgtest', source = libgtest_sources)
+
+test = env.Program(target='libgtest', source = libgtest_sources)
 
 
 #Program( 'test', test_sources, LIBS=['gtest'], LIBPATH='../lib/' )
@@ -22,6 +48,8 @@ libgtest = env.Program(target='libgtest', source = ['../gtest/src/gtest-all.cc']
 #Set default target
 Default(tictactoe)
 
+
+#Program('program', Glob('*.c'))
 
 #test = Command( target = "tictactoe_test",
 #                source = "./tictactoe",
