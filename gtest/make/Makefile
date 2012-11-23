@@ -18,6 +18,9 @@ GTEST_DIR = ..
 
 # Where to find user code.
 USER_DIR = ../samples
+TEST_DIR = ../../test
+SRC_DIR = ../../src
+INCLUDE_DIR = ../../src/include
 
 # Flags passed to the preprocessor.
 CPPFLAGS += -I$(GTEST_DIR)/include
@@ -27,7 +30,7 @@ CXXFLAGS += -g -Wall -Wextra
 
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
-TESTS = sample1_unittest
+TESTS = sample1_unittest testCounter
 
 # All Google Test headers.  Usually you shouldn't change this
 # definition.
@@ -77,4 +80,13 @@ sample1_unittest.o : $(USER_DIR)/sample1_unittest.cc \
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/sample1_unittest.cc
 
 sample1_unittest : sample1.o sample1_unittest.o gtest_main.a
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -pthread $^ -o $@
+
+counter.o : $(SRC_DIR)/counter.cpp $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) -c $(SRC_DIR)/counter.cpp
+
+testCounter.o : $(TEST_DIR)/testCounter.cpp $(GTEST_HEADERS) 
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/testCounter.cpp
+
+testCounter : counter.o testCounter.o gtest_main.a
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -pthread $^ -o $@
