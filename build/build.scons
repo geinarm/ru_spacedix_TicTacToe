@@ -24,13 +24,12 @@ libgtest_sources = ['../gtest/src/gtest.cc',
                     '../gtest/src/gtest-typed-test.cc'
                     ]
 
-tictactoe_sources = ['../src/main.cpp', 
-                    '../src/counter.cpp'
-                    ]
+tictactoe_sources = Glob('../src/*.cpp')
+#['../src/main.cpp', '../src/counter.cpp']
 
-test_sources = ['../test/testCounter.cpp', 
-                '../src/counter.cpp'
-                ]
+test_sources = Glob('../test/*.cpp')+[
+            '../src/counter.cpp'
+            ]
 
 
 #Tell scons were stuff is
