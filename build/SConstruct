@@ -1,7 +1,11 @@
+import os
+from subprocess import call
+
 #initialize the environment
 env = Environment()
 
-#Just some variables
+#Paths
+#---------------------------------------
 sourcePath = '../src/'
 
 headers = ['../gtest/include/', 
@@ -20,33 +24,62 @@ libgtest_sources = ['../gtest/src/gtest.cc',
                     '../gtest/src/gtest-typed-test.cc'
                     ]
 
-test_sources = ['../test/testCounter.cpp', 
-                '../src/counter.cpp'
-                ]
-
 tictactoe_sources = ['../src/main.cpp', 
                     '../src/counter.cpp'
                     ]
+
+test_sources = ['../test/testCounter.cpp', 
+                '../src/counter.cpp'
+                ]
 
 
 #Tell scons were stuff is
 env.Append(CPPPATH = headers)
 env.Append(LIBPATH = ['../lib/'])
 
-r = '../gtest/src/gtest-'
-root = '../gtest/src/'
-#Create a build target
+#Build targets
+#---------------------------------------
+
+#Google test framwork
+libgtest = env.Library(target='libgtest', source = libgtest_sources)
+
+#TicTacToe game
 tictactoe = env.Program(target='tictactoe', source = tictactoe_sources)
 
-libgtest = env.Program(target='libgtest', source = libgtest_sources)
+#TicTacToe unit tests
+all_tests = env.Program(target='all_tests', source = test_sources,  LIBS=['libgtest'], LIBPATH='.')
 
-test = env.Program(target='libgtest', source = libgtest_sources)
 
+#Post actions
+#--------------------------------
+
+#After building all tests
+def post_test(target, source, env):
+    print "Runing unittests"
+    #output = os.popen('./all_tests').read()
+    call(["./all_tests"])
+
+env.AddPostAction(all_tests, post_test)
+
+
+
+
+#Other stuff
+#-----------------------------------------------
+
+#post_build = env.Builder(action = hello)
+#env = Environment(BUILDERS = {'Post Build' : post_build})
+
+#Depends(all_test, post_build)
+
+
+#output = os.popen('./all_tests').read()
+#print output
 
 #Program( 'test', test_sources, LIBS=['gtest'], LIBPATH='../lib/' )
 
 #Set default target
-Default(tictactoe)
+#Default(tictactoe)
 
 
 #Program('program', Glob('*.c'))
