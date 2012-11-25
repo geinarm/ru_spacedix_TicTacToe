@@ -7,6 +7,8 @@
 //
 
 #include "include/counter.h"
+#include <cstring>
+using namespace std;
 
 counter::counter()
 {

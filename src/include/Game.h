@@ -7,12 +7,12 @@ class Game
 {
     public:
         Game();
-        virtual ~Game();
-        virtual void startGame();
-        virtual void makeTurn();
-        virtual int checkWin();
-        virtual void nextPlayer();
-        virtual void endGame();
+        ~Game();
+        void startGame();
+        void makeTurn();
+        int checkWin();
+        void nextPlayer();
+        void endGame();
         int getCurrentPlayer();
         int getPlayerCount();
     protected:
