@@ -90,3 +90,5 @@ testCounter.o : $(TEST_DIR)/testCounter.cpp $(GTEST_HEADERS)
 
 testCounter : counter.o testCounter.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -pthread $^ -o $@
+
+./testCounter
