@@ -9,48 +9,17 @@
 #include <iostream>
 #include <cstring>
 #include "include/counter.h"
-
-char input[64];
+#include "include/GameRunner.h"
 
 int main(int argc, const char * argv[])
 {
-    bool running = true;
-    counter counter;
+    GameRunner gameRunner;
+    counter* game = new counter;
 
-    std::cin.width(64);
+    gameRunner.setGame(game);
+    gameRunner.run();
 
-    while(running)
-    {
-        std::cout << ": ";
-        std::cin >> input;
-
-        if (strcmp(input, "add") == 0)
-        {
-            counter.add(1);
-            std::cout << "count: " << counter.getCount() << "\n";
-        }
-        else if(strcmp(input, "sub") == 0)
-        {
-            counter.subtract();
-            std::cout << "count: " << counter.getCount() << "\n";
-        }
-        else if((strcmp(input, "reset") == 0))
-        {
-            counter.reset();
-            std::cout << "count: " << counter.getCount() << "\n";
-        }
-        else if (strcmp(input, "exit") == 0)
-        {
-            running = false;
-        }
-        else
-        {
-            std::cout << "Invalid command" << "\n";
-        }
-
-    }
-    std::cout << "Thanks for counting, see ya";
-
+    cout << "hello world";
     return 0;
 }
 

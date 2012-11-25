@@ -2,17 +2,20 @@
 #define TICTACTOE_H
 
 #include "Game.h"
+#include "Board.h"
 
 
 class TicTacToe : public Game
 {
     public:
-        void startGame();
         TicTacToe();
-        virtual ~TicTacToe();
+        ~TicTacToe();
+        void startGame();
+        void makeTurn();
+        int checkWin();
+        void endGame();
     private:
-	 	int x, o;	
-		int *winConds;
+        Board board;
 };
 
 #endif // TICTACTOE_H

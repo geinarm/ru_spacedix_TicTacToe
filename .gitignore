@@ -20,3 +20,9 @@ codeblocks/tictactoe_test
 *.exe
 
 *.depend
+
+build/all_tests
+
+build/tictactoe
+
+*.dblite
