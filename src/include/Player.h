@@ -6,17 +6,15 @@ using namespace std;
 
 class Player
 {
-    int score;
-    string name;
-    string id;
-
     public:
-        virtual void setName(string playerName);
-        virtual void setId(string playerId);
-        Player();
-        virtual ~Player();
+        void setName(string playerName);
+		string getName();
+        void addWin();
+		Player();
+        ~Player();
     private:
-
+		int score;
+		string name;
 };
 
 #endif // PLAYER_H
