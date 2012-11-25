@@ -1,8 +1,15 @@
+#ifndef GAME_CPP
+#define GAME_CPP
+
 #include "include/Game.h"
+#include "include/Player.h"
+using namespace std;
 
 Game::Game()
 {
-    //ctor
+	currentPlayer = 0;
+	playerCount = 2;
+	players = new Player[2];
 }
 
 Game::~Game()
@@ -42,3 +49,5 @@ int Game::getPlayerCount(){
 void Game::setPlayerCount(int count){
     playerCount = count;
 }
+
+#endif

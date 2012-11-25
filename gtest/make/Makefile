@@ -82,13 +82,19 @@ sample1_unittest.o : $(USER_DIR)/sample1_unittest.cc \
 sample1_unittest : sample1.o sample1_unittest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -pthread $^ -o $@
 
-counter.o : $(SRC_DIR)/counter.cpp $(GTEST_HEADERS)
+Player.o : $(SRC_DIR)/Player.cpp $(INCLUDE_DIR)/Player.h
+	$(CXX) $(CPPFLAGS) -c $(SRC_DIR)/Player.cpp
+
+Game.o : $(SRC_DIR)/Game.cpp $(INCLUDE_DIR)/Game.h $(INCLUDE_DIR)/Player.h
+	$(CXX) $(CPPFLAGS) -c $(SRC_DIR)/Game.cpp
+
+counter.o : $(SRC_DIR)/counter.cpp $(INCLUDE_DIR)/Game.h $(INCLUDE_DIR)/Player.h $(GTEST_HEADERS) 
 	$(CXX) $(CPPFLAGS) -c $(SRC_DIR)/counter.cpp
 
 testCounter.o : $(TEST_DIR)/testCounter.cpp $(GTEST_HEADERS) 
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/testCounter.cpp
 
-testCounter : counter.o testCounter.o gtest_main.a
+testCounter : counter.o testCounter.o Player.o Game.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -pthread $^ -o $@
 
-./testCounter
+

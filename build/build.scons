@@ -35,7 +35,7 @@ test_sources = Glob('../test/*.cpp')+[
 #Tell scons were stuff is
 env.Append(CPPPATH = headers)
 env.Append(LIBPATH = ['../lib/'])
-env.Append(CXXFLAGS = ['-pthread'])
+env.Append(LINKFLAGS = ['-pthread'])
 
 #Build targets
 #---------------------------------------
