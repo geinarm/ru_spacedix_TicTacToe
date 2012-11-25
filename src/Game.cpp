@@ -1,8 +1,12 @@
 #include "include/Game.h"
+#include "Player.cpp"
+using namespace std;
 
 Game::Game()
 {
-    //ctor
+	currentPlayer = 0;
+	playerCount = 2;
+	players = new Player[2];
 }
 
 Game::~Game()

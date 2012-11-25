@@ -16,7 +16,7 @@ string Player::getName()
 
 void Player::addScore()
 {
-    addScore(1);
+    score++;
 }
 
 int Player::getScore()

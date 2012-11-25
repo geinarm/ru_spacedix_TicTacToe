@@ -8,9 +8,11 @@
 
 #include "include/counter.h"
 #include <cstring>
+#include "include/Game.h"
+#include "Game.cpp"
 using namespace std;
 
-counter::counter()
+counter::counter() : Game()
 {
     count = 0;
 }
