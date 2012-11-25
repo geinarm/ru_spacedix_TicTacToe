@@ -2,14 +2,8 @@
 
 Player::Player()
 {
-    //ctor
+ 	name = "";
 }
-
-Player::~Player()
-{
-    //dtor
-}
-
 
 void Player::setName(string playerName)
 {
@@ -20,15 +14,6 @@ string Player::getName()
     return name;
 }
 
-void Player::setId(string playerId)
-{
-    id = playerId;
-}
-
-void Player::addScore(int s)
-{
-    score += s;
-}
 void Player::addScore()
 {
     addScore(1);
