@@ -1,3 +1,6 @@
+#ifndef PLAYER_CPP
+#define PLAYER_CPP
+
 #include "include/Player.h"
 
 Player::Player()
@@ -23,3 +26,5 @@ int Player::getScore()
 {
     return score;
 }
+
+#endif

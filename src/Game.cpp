@@ -1,3 +1,6 @@
+#ifndef GAME_CPP
+#define GAME_CPP
+
 #include "include/Game.h"
 #include "Player.cpp"
 using namespace std;
@@ -46,3 +49,5 @@ int Game::getPlayerCount(){
 void Game::setPlayerCount(int count){
     playerCount = count;
 }
+
+#endif
