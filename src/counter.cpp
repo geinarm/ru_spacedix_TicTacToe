@@ -50,3 +50,66 @@ void counter::reset()
 {
     count = 0;
 }
+
+void counter::startGame()
+{
+
+    cout << "Starting game\n";
+
+    setPlayerCount(2);
+    setCurrentPlayer(0);
+    players = new Player[2];
+
+    Player player1;
+    player1.setName("TheDude");
+
+    Player player2;
+    player2.setName("TheMan");
+
+    players[0] = player1;
+    players[1] = player2;
+}
+
+void counter::makeTurn()
+{
+    char input[64];
+    std::cout << players[getCurrentPlayer()].getName() << " : ";
+    std::cin >> input;
+
+    if (strcmp(input, "add") == 0)
+    {
+        add(1);
+        std::cout << "count: " << getCount() << "\n";
+    }
+    else if(strcmp(input, "sub") == 0)
+    {
+        subtract();
+        std::cout << "count: " << getCount() << "\n";
+    }
+    else if((strcmp(input, "reset") == 0))
+    {
+        reset();
+        std::cout << "count: " << getCount() << "\n";
+    }
+    else if (strcmp(input, "exit") == 0)
+    {
+        endGame();
+    }
+    else
+    {
+        std::cout << "Invalid command" << "\n";
+    }
+}
+
+int counter::checkWin()
+{
+    if(count >= 10)
+        return getCurrentPlayer();
+    else
+        return -1;
+}
+
+void counter::endGame()
+{
+    std::cout << "Thanks for counting, see ya\n";
+}

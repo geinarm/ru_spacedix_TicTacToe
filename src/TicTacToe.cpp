@@ -1,5 +1,4 @@
-#include "TicTacToe.h"
-#include "TicTacToePlayer.h"
+#include "include/TicTacToe.h"
 #include <string>
 #include <iostream>
 using namespace std;
@@ -16,14 +15,13 @@ TicTacToe::~TicTacToe()
 
 void TicTacToe::startGame()
 {
-    x = 0;
-    o = 0;
     //Taka inn tvo playera
     playerCount = 2;
 
     //Bý nýtt array af players og setjum það inn í game.h
-    Player* newPlayers = new Player[2];
-    players = newPlayers;
+    players = new Player[2];
+    //Player* newPlayers = new Player[2];
+    //players = newPlayers;
 
 
     //Setjum alla players i leikinum inn í array'ið
@@ -47,13 +45,17 @@ void TicTacToe::startGame()
 }
 
 
-void makeTurn()
+void TicTacToe::makeTurn()
 {
 
 }
 
-bool checkWin()
+int TicTacToe::checkWin()
+{
+    return -1;
+}
+
+void TicTacToe::endGame()
 {
 
 }
-void endGame();

@@ -1,4 +1,4 @@
-#include "TicTacToePlayer.h"
+#include "include/TicTacToePlayer.h"
 
 TicTacToePlayer::TicTacToePlayer()
 {

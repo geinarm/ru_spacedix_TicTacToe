@@ -10,11 +10,12 @@
 #define __headcount__counter__
 
 #include <iostream>
+#include "Game.h"
 
-class counter
+class counter : public Game
 {
     int count;
-    
+
 public:
     counter();
     void add();
@@ -23,6 +24,11 @@ public:
     void subtract(int i);
     int getCount();
     void reset();
+
+    void startGame();
+    void makeTurn();
+    int checkWin();
+    void endGame();
 };
 
 #endif /* defined(__headcount__counter__) */

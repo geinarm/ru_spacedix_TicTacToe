@@ -24,3 +24,5 @@ codeblocks/tictactoe_test
 build/all_tests
 
 build/tictactoe
+
+*.dblite
