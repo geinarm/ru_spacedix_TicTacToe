@@ -10,11 +10,12 @@
 #include <cstring>
 #include "include/counter.h"
 #include "include/GameRunner.h"
+using namespace std;
 
 int main(int argc, const char * argv[])
 {
     GameRunner gameRunner;
-    counter* game = new counter;
+    counter* game = new counter();
 
     gameRunner.setGame(game);
     gameRunner.run();

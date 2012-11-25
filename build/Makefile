@@ -1,35 +1,26 @@
-OBJS = counter.o main.o
-OBJS_t = testCounter.o counter.o
-CC = vc++
-DEBUG = -g
-CFLAGS = -Wall -c $(DEBUG)
-LFLAGS = -Wall $(DEBUG)
+SRC_DIR = ../src
+INCLUDE_DIR = ../src/include
 
-all: p1 p2
+play : main.o TicTacToe.o Player.o Game.o Board.o GameRunner.o counter.o 
+	g++ main.o TicTacToe.o Player.o Game.o Board.o GameRunner.o counter.o  -o play
 
-p1: $(OBJS)
-	$(CC) $(LFLAGS) $(OBJS) -o p1
+main.o : $(SRC_DIR)/main.cpp $(INCLUDE_DIR)/counter.h $(INCLUDE_DIR)/GameRunner.h 
+	g++ -c $(SRC_DIR)/main.cpp
 
-p2: $(OBJS_t)
-	$(CC) $(LFLAGS) $(OBJS_t) -o p2
+TicTacToe.o : $(SRC_DIR)/TicTacToe.cpp $(INCLUDE_DIR)/TicTacToe.h 
+	g++ -c $(SRC_DIR)/TicTacToe.cpp
 
-counter.o: ../src/counter.h ../src/counter.cpp
-	$(CC) $(CFLAGS) ../src/counter.cpp
+Player.o : $(SRC_DIR)/Player.cpp $(INCLUDE_DIR)/Player.h
+	g++ -c $(SRC_DIR)/Player.cpp
 
-main.o: ../src/main.cpp
-	$(CC) $(CFLAGS) ../src/main.cpp
+Game.o : $(SRC_DIR)/Game.cpp $(INCLUDE_DIR)/Game.h $(INCLUDE_DIR)/Player.h
+	g++ -c $(SRC_DIR)/Game.cpp
 
-#catch.o: ../test/catch.hpp
-#	$(CC) $(CFLAGS) ../test/catch.hpp
+Board.o : $(SRC_DIR)/Board.cpp $(INCLUDE_DIR)/Board.h 
+	g++ -c $(SRC_DIR)/Board.cpp
 
-testCounter.o: ../test/testCounter.cpp ../test/catch.hpp
-	$(CC) $(CFLAGS) ../test/testCounter.cpp
+GameRunner.o : $(SRC_DIR)/GameRunner.cpp $(INCLUDE_DIR)/GameRunner.h
+	g++ -c $(SRC_DIR)/GameRunner.cpp
 
-clean:
-	\rm *.o p1 p2
-
-#tar:
-#    tar cfv p1.tar Movie.h Movie.cpp Name.h Name.cpp NameList.h \
-#            NameList.cpp  Iterator.cpp Iterator.h
-
-#../test/catch.hpp ../src/counter.h ../src/counter.cpp
+counter.o : $(SRC_DIR)/counter.cpp $(INCLUDE_DIR)/counter.h $(INCLUDE_DIR)/Game.h $(INCLUDE_DIR)/Player.h
+	g++ -c $(SRC_DIR)/counter.cpp

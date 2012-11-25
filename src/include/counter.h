@@ -16,21 +16,22 @@ using namespace std;
 
 class counter : public Game
 {
-    int count;
+	public:
+    	counter();
+    	void add();
+    	void add(int i);
+    	void subtract();
+    	void subtract(int i);
+    	int getCount();
+    	void reset();
 
-public:
-    counter();
-    void add();
-    void add(int i);
-    void subtract();
-    void subtract(int i);
-    int getCount();
-    void reset();
+    	void startGame();
+    	void makeTurn();
+    	int checkWin();
+    	void endGame();
 
-    void startGame();
-    void makeTurn();
-    int checkWin();
-    void endGame();
+	private:
+		int count;
 };
 
 #endif /* defined(__headcount__counter__) */

@@ -9,6 +9,7 @@
 #include "include/counter.h"
 #include <cstring>
 #include "include/Game.h"
+#include "include/Player.h"
 using namespace std;
 
 counter::counter() : Game()

@@ -8,11 +8,11 @@ class Game
     public:
         Game();
         ~Game();
-        void startGame();
-        void makeTurn();
-        int checkWin();
+        virtual void startGame();
+        virtual void makeTurn();
+        virtual int checkWin();
         void nextPlayer();
-        void endGame();
+        virtual void endGame();
         int getCurrentPlayer();
         int getPlayerCount();
     protected:

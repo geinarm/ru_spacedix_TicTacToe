@@ -2,7 +2,7 @@
 #define GAME_CPP
 
 #include "include/Game.h"
-#include "Player.cpp"
+#include "include/Player.h"
 using namespace std;
 
 Game::Game()
