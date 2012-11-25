@@ -35,11 +35,11 @@
 				<Compiler>
 					<Add directory="../src" />
 					<Add directory="../test" />
-					<Add directory="../gtest" />
-					<Add directory="../gtest/include" />
+					<Add directory="/usr/src/gtest" />
 				</Compiler>
 				<Linker>
-					<Add library="../lib/libgtest.a" />
+					<Add library="../../../../../usr/lib/libgtest.a" />
+					<Add library="../../../../../usr/lib/libgtest_main.a" />
 				</Linker>
 			</Target>
 		</Build>
@@ -50,19 +50,11 @@
 		<Linker>
 			<Add library="../lib/libgtest.a" />
 		</Linker>
-		<Unit filename="../src/Board.cpp" />
-		<Unit filename="../src/Game.cpp" />
-		<Unit filename="../src/GameRunner.cpp" />
-		<Unit filename="../src/Player.cpp" />
-		<Unit filename="../src/TicTacToe.cpp" />
-		<Unit filename="../src/TicTacToePlayer.cpp" />
 		<Unit filename="../src/counter.cpp" />
-		<Unit filename="../src/include/Game.h" />
-		<Unit filename="../src/include/GameRunner.h" />
-		<Unit filename="../src/include/Player.h" />
-		<Unit filename="../src/include/TicTacToe.h" />
-		<Unit filename="../src/include/TicTacToePlayer.h" />
-		<Unit filename="../src/include/counter.h" />
+		<Unit filename="../src/include/counter.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
 		<Unit filename="../src/main.cpp">
 			<Option target="Debug" />
 			<Option target="Release" />
