@@ -29,7 +29,6 @@ void TicTacToe::startGame()
     {
         Player newPlayer;
 
-        newPlayer.setId("player" + i);
         cout << "Player" << i << " Please write your name:";
 
         //Upphafssetjum nafnid a player med nafni leikmanns
