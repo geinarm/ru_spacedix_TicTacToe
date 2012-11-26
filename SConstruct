@@ -10,7 +10,7 @@ from subprocess import call
 
 #Run the unit tests
 def runUnitTest(env,target,source):
-    print 'Runing Unit tests'
+    print 'Running Unit tests'
     call(["./build/unitTest"])
 
 #After building gtest library
@@ -85,7 +85,7 @@ runTest = env.Command("test.passed",unitTest ,runUnitTest)
 
 #Build and run tests
 test_alias = Alias('test', [unitTest, runTest])
-test_alias = Alias('run-test', [runTest])
+runTest_alias = Alias('run-test', [runTest])
 
 #Set dependancy order
 env.Depends(unitTest, libgtest)
