@@ -8,7 +8,7 @@
 
 TEST( Board, checkCell ) {
     Board board;
-    EXPECT_EQ(board.getCell(), -1 );
+    EXPECT_EQ(board.getCell(1), -1 );
     board.updateBoard(0, 1);
     EXPECT_EQ(board.getCell(1), 1 );
     board.updateBoard(1, 5);
@@ -28,6 +28,7 @@ TEST( Board, checkCellOverwrite ) {
 TEST( Board, checkFull ) {
     Board board;
     EXPECT_TRUE(board.isFull());
+    board.updateBoard(1, 0);
     board.updateBoard(0, 1);
     board.updateBoard(1, 2);
     board.updateBoard(0, 3);
@@ -37,7 +38,6 @@ TEST( Board, checkFull ) {
     board.updateBoard(1, 6);
     board.updateBoard(0, 7);
     board.updateBoard(1, 8);
-    board.updateBoard(0, 9);
     EXPECT_TRUE(board.isFull());
 }
 
