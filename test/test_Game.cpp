@@ -8,19 +8,20 @@
 
 TEST( Game, playerCount ) {
     Game game;
-    EXPECT_EQ(game.getPlayerCount(), 0 );
-    game.setPlayerCount(2);
     EXPECT_EQ(game.getPlayerCount(), 2 );
+    game.setPlayerCount(4);
+    EXPECT_EQ(game.getPlayerCount(), 4 );
 }
 
 TEST( Game, checkCurrentPlayer ) {
     Game game;
-    game.setPlayerCount(2);
     EXPECT_EQ(game.getCurrentPlayer(), 0 );
-    game.setCurrentPlayer(1);
+    game.nextPlayer();
     EXPECT_EQ(game.getCurrentPlayer(), 1 );
     game.nextPlayer();
     EXPECT_EQ(game.getCurrentPlayer(), 0 );
+	game.nextPlayer();
+	EXPECT_EQ(game.getCurrentPlayer(), 1);
 }
 
 

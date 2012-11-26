@@ -44,6 +44,9 @@ void Board::printBoard()
 
 void Board::updateBoard(int player, int cell)
 {
+	if (cell > 9 || cell < 1 || player < 0 || player > 1) 
+		return;
+
     states[player] += 1 << (cell - 1);
 
     if(player == 0)
@@ -58,18 +61,19 @@ void Board::updateBoard(int player, int cell)
 
 int Board::getCell(int cell)
 {
+	if (cell < 0 || cell > 9)
+		return -1;
+
     if(boardLayout[cell]=='X'){
         return 0;
     }
-    else if(boardLayout[cell]=='O')
+
+    if(boardLayout[cell]=='O')
     {
         return 1;
     }
-    else if(boardLayout[cell]==' ')
-    {
-        return -1;
-    }
-    else return -1;
+    
+	return -1;
 }
 
 bool Board::isFull()

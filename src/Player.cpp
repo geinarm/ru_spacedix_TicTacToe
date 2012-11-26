@@ -6,6 +6,7 @@
 Player::Player()
 {
  	name = "";
+	score = 0;
 }
 
 void Player::setName(string playerName)
