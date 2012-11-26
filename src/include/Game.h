@@ -11,17 +11,10 @@ class Game
         virtual void startGame();
         virtual void makeTurn();
         virtual int checkWin();
-<<<<<<< HEAD
         virtual void nextPlayer();
         virtual void endGame(int winner);
         virtual int getCurrentPlayer();
         virtual int getPlayerCount();
-=======
-        void nextPlayer();
-        virtual void endGame();
-        int getCurrentPlayer();
-        int getPlayerCount();
->>>>>>> origin/master
     protected:
         virtual void setCurrentPlayer(int index);
         virtual void setPlayerCount(int count);

@@ -16,7 +16,7 @@ class TicTacToe : public Game
         void endGame(int winner);
     private:
         Board board;
-        int winningStates[8];
+        static const int winningStates[8];
 };
 
 #endif // TICTACTOE_H

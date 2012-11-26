@@ -1,11 +1,13 @@
 #include "include/TicTacToe.h"
 #include <string>
 #include <iostream>
+
 using namespace std;
+
+const int TicTacToe::winningStates[8] = {7, 56, 73, 84, 146, 273, 292, 448};
 
 TicTacToe::TicTacToe()
 {
-    //ctor
 }
 
 TicTacToe::~TicTacToe()
@@ -18,8 +20,6 @@ void TicTacToe::startGame()
     //Taka inn tvo playera
     playerCount = 2;
 
-    winningStates  = {7, 56, 73, 84, 146, 273, 292,448};
-
     //Bý nýtt array af players og setjum það inn í game.h
     players = new Player[2];
     //Player* newPlayers = new Player[2];
@@ -31,11 +31,6 @@ void TicTacToe::startGame()
     for(int i = 0; i < playerCount; i++)
     {
         Player newPlayer;
-
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
         cout << "Player" << i << " Please write your name:";
 
         //Upphafssetjum nafnid a player med nafni leikmanns
@@ -70,7 +65,6 @@ void TicTacToe::makeTurn()
             board.printBoard();
         }
 
-
     }
     while(board.getCell(marker)!=-1);
 
@@ -80,15 +74,11 @@ void TicTacToe::makeTurn()
 
 int TicTacToe::checkWin()
 {
-    int playerState;
-    playerState = board.getState(getCurrentPlayer());
+    int playerState = board.getState(getCurrentPlayer());
 
-    for(int i = 0; i < sizeof(winningStates); i++)
+    for(unsigned int i=0; i < 8; i++)
     {
-        cout << "Win"<< winningStates[i] << endl;
-        cout << "player" << playerState << endl;
-
-        if((winningStates[i] && playerState) == winningStates[i])
+        if((winningStates[i] & playerState) == winningStates[i])
             return getCurrentPlayer();
     }
 

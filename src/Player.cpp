@@ -18,13 +18,6 @@ string Player::getName()
     return name;
 }
 
-<<<<<<< HEAD
-void Player::addScore(int s)
-{
-    score += s;
-}
-=======
->>>>>>> origin/master
 void Player::addScore()
 {
     score++;
