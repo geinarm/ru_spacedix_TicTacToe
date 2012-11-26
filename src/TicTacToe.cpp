@@ -31,12 +31,13 @@ void TicTacToe::startGame()
     for(int i = 0; i < playerCount; i++)
     {
         Player newPlayer;
-        cout << "Player" << i << " Please write your name:";
+        cout << "Player" << i + 1 << " Please write your name:";
 
         //Upphafssetjum nafnid a player med nafni leikmanns
         string playerName;
         cin >> playerName;
         newPlayer.setName(playerName);
+		cin.ignore(1024, '\n');
 
         //Setjum hann i arrayinn
         players[i] = newPlayer;
@@ -58,16 +59,23 @@ void TicTacToe::makeTurn()
     do
     {
         cin >> marker;
+	 	cin.ignore(1024, '\n');
+
         cout << endl;
         if(board.getCell(marker)!=-1)
         {
-            cout<< "That cell is already occupied" << endl;
-            cout<< "Try Again";
+            cout << "That cell is already occupied" << endl;
+            cout << "Try Again" << endl;
             board.printBoard();
         }
+		else if (marker < 0 || marker > 9)
+		{
+			cout << "Not a valid cell" << endl;
+			board.printBoard();
+		}
 
     }
-    while(board.getCell(marker)!=-1);
+    while(board.getCell(marker) != -1 || marker < 0 || marker > 9);
 
     board.updateBoard(getCurrentPlayer(),marker);
 
@@ -77,7 +85,7 @@ int TicTacToe::checkWin()
 {
     int playerState = board.getState(getCurrentPlayer());
 
-    for(unsigned int i=0; i < 8; i++)
+    for(unsigned int i = 0; i < 8; i++)
     {
         if((winningStates[i] & playerState) == winningStates[i])
             return getCurrentPlayer();

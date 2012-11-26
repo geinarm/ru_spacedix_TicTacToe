@@ -8,9 +8,9 @@ class GameRunner
 {
     public:
         GameRunner();
-        GameRunner(Game* g);
+        GameRunner(Game &g);
         ~GameRunner();
-        void setGame(Game* g);
+        void setGame(Game &g);
         void run();
     private:
         Game* game;

@@ -1,11 +1,11 @@
 #include "include/Board.h"
-#include <math.h>
 #include <iostream>
+using namespace std;
 
 Board::Board()
 {
+    states[0] = 0;
     states[1] = 0;
-    states[2] = 0;
 
     for(int i = 0; i < 9; i ++) //sizeof(boardLayout)
     {
@@ -20,7 +20,7 @@ Board::~Board()
 
 void Board::printBoard()
 {
-    int count = 0;
+    int count = 1;
 
     for(int i = 0; i < 3; i++) //sqrt(sizeof(boardLayout))
     {
@@ -44,14 +44,13 @@ void Board::printBoard()
 
 void Board::updateBoard(int player, int cell)
 {
-    states[player] += pow(2, cell);
-    //states[player] = 11;
+    states[player] += 1 << (cell - 1);
 
-    if(player==0)
+    if(player == 0)
     {
         boardLayout[cell] = 'X';
     }
-    else if(player==1)
+    else if(player == 1)
     {
         boardLayout[cell] = 'O';
     }
@@ -78,7 +77,7 @@ bool Board::isFull()
     if( (states[0] + states[1]) == 511)
         return true;
 
-    else return false;
+    return false;
 }
 
 int Board::getState(int player)

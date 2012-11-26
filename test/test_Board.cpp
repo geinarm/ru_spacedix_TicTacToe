@@ -27,13 +27,13 @@ TEST( Board, checkCellOverwrite ) {
 
 TEST( Board, checkFull ) {
     Board board;
-    EXPECT_TRUE(board.isFull());
+    EXPECT_FALSE(board.isFull());
     board.updateBoard(1, 0);
     board.updateBoard(0, 1);
     board.updateBoard(1, 2);
     board.updateBoard(0, 3);
     board.updateBoard(1, 4);
-    EXPECT_TRUE(board.isFull());
+    EXPECT_FALSE(board.isFull());
     board.updateBoard(0, 5);
     board.updateBoard(1, 6);
     board.updateBoard(0, 7);

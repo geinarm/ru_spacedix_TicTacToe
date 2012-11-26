@@ -1,23 +1,13 @@
 #include "include/GameRunner.h"
 
-GameRunner::GameRunner()
+GameRunner::GameRunner(Game& g)
 {
-	game = NULL;
-}
-
-GameRunner::GameRunner(Game* g)
-{
-    game = g;
+    game = &g;
 }
 
 GameRunner::~GameRunner()
 {
-    delete game;
-}
 
-void GameRunner::setGame(Game* g)
-{
-    game = g;
 }
 
 void GameRunner::run()

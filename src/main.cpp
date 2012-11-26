@@ -16,10 +16,9 @@ using namespace std;
 
 int main(int argc, const char * argv[])
 {
-    GameRunner gameRunner;
-    TicTacToe* game = new TicTacToe;
+    TicTacToe game;
+	GameRunner gameRunner(game);
 
-    gameRunner.setGame(game);
     gameRunner.run();
 
     return 0;
