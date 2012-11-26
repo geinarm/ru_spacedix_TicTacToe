@@ -20,6 +20,7 @@ def post_libgtest(target, source, env):
 
 #After building the game
 def post_tictactoe(target, source, env):
+    shutil.move('tictactoe', 'build/tictactoe')
     print 'Done building game'
 
 #After running all tests
@@ -47,7 +48,7 @@ libgtest_sources = ['gtest/src/gtest.cc',
                     'gtest/src/gtest-port.cc',
                     'gtest/src/gtest-printers.cc',
                     'gtest/src/gtest-test-part.cc',
-                    '.gtest/src/gtest-typed-test.cc'
+                    'gtest/src/gtest-typed-test.cc'
                     ]
 
 tictactoe_sources = Glob('src/*.cpp')
@@ -55,7 +56,8 @@ tictactoe_sources = Glob('src/*.cpp')
 test_sources = Glob('test/*.cpp') + [
                 'src/counter.o',
                 'src/Player.o',
-                'src/Game.o'
+                'src/Game.o',
+                'src/Board.o'
                 ]
 
 

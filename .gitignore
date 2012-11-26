@@ -26,3 +26,7 @@ build/all_tests
 build/tictactoe
 
 *.dblite
+
+*.pyc
+
+build/unitTest
