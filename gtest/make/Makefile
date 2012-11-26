@@ -30,7 +30,7 @@ CXXFLAGS += -g -Wall -Wextra
 
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
-TESTS = sample1_unittest testCounter
+TESTS = sample1_unittest testCounter test_Board test_Game test_Player test_TicTacToe
 
 # All Google Test headers.  Usually you shouldn't change this
 # definition.
@@ -82,6 +82,9 @@ sample1_unittest.o : $(USER_DIR)/sample1_unittest.cc \
 sample1_unittest : sample1.o sample1_unittest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -pthread $^ -o $@
 
+TicTacToe.o : $(SRC_DIR)/TicTacToe.cpp $(INCLUDE_DIR)/TicTacToe.h $(INCLUDE_DIR)/Game.h $(INCLUDE_DIR)/Board.h $(INCLUDE_DIR)/Player.h
+	$(CXX) $(CPPFLAGS) -c $(SRC_DIR)/TicTacToe.cpp
+
 Player.o : $(SRC_DIR)/Player.cpp $(INCLUDE_DIR)/Player.h
 	$(CXX) $(CPPFLAGS) -c $(SRC_DIR)/Player.cpp
 
@@ -91,10 +94,35 @@ Game.o : $(SRC_DIR)/Game.cpp $(INCLUDE_DIR)/Game.h $(INCLUDE_DIR)/Player.h
 counter.o : $(SRC_DIR)/counter.cpp $(INCLUDE_DIR)/Game.h $(INCLUDE_DIR)/Player.h $(GTEST_HEADERS) 
 	$(CXX) $(CPPFLAGS) -c $(SRC_DIR)/counter.cpp
 
+Board.o : $(SRC_DIR)/Board.cpp $(INCLUDE_DIR)/Board.h 
+	$(CXX) $(CPPFLAGS) -c $(SRC_DIR)/Board.cpp
+
+test_Board.o : $(TEST_DIR)/test_Board.cpp $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/test_Board.cpp
+
+test_Game.o : $(TEST_DIR)/test_Game.cpp $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/test_Game.cpp
+
+test_TicTacToe.o : $(TEST_DIR)/test_TicTacToe.cpp $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/test_TicTacToe.cpp
+
 testCounter.o : $(TEST_DIR)/testCounter.cpp $(GTEST_HEADERS) 
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/testCounter.cpp
+
+test_Player.o : $(TEST_DIR)/test_Player.cpp $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)/test_Player.cpp
+
+test_TicTacToe : TicTacToe.o test_TicTacToe.o Player.o Game.o Board.o gtest_main.a
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -pthread $^ -o $@ 
+
+test_Player : Player.o test_Player.o gtest_main.a
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -pthread $^ -o $@
 
 testCounter : counter.o testCounter.o Player.o Game.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -pthread $^ -o $@
 
+test_Board : Board.o test_Board.o gtest_main.a
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -pthread $^ -o $@
 
+test_Game : Game.o test_Game.o Player.o gtest_main.a
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -pthread $^ -o $@
