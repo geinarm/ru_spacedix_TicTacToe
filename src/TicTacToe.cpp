@@ -32,7 +32,10 @@ void TicTacToe::startGame()
     {
         Player newPlayer;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
         cout << "Player" << i << " Please write your name:";
 
         //Upphafssetjum nafnid a player med nafni leikmanns

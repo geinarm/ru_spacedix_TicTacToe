@@ -1,15 +1,12 @@
+#ifndef PLAYER_CPP
+#define PLAYER_CPP
+
 #include "include/Player.h"
 
 Player::Player()
 {
-    //ctor
+ 	name = "";
 }
-
-Player::~Player()
-{
-    //dtor
-}
-
 
 void Player::setName(string playerName)
 {
@@ -21,16 +18,21 @@ string Player::getName()
     return name;
 }
 
+<<<<<<< HEAD
 void Player::addScore(int s)
 {
     score += s;
 }
+=======
+>>>>>>> origin/master
 void Player::addScore()
 {
-    addScore(1);
+    score++;
 }
 
 int Player::getScore()
 {
     return score;
 }
+
+#endif

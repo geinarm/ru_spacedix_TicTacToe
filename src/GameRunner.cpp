@@ -1,7 +1,9 @@
 #include "include/GameRunner.h"
 
 GameRunner::GameRunner()
-{}
+{
+	game = NULL;
+}
 
 GameRunner::GameRunner(Game* g)
 {
