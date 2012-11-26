@@ -22,8 +22,6 @@ void TicTacToe::startGame()
 
     //Bý nýtt array af players og setjum það inn í game.h
     players = new Player[2];
-    //Player* newPlayers = new Player[2];
-    //players = newPlayers;
 
     setCurrentPlayer(0);
 
@@ -53,7 +51,6 @@ void TicTacToe::makeTurn()
 
     board.printBoard();
 
-    //cout << "Player" << getCurrentPlayer()+1 << endl;
     cout << players[getCurrentPlayer()].getName() << endl;
     cout << "Where do you want to place your marker:";
     do
@@ -77,8 +74,12 @@ void TicTacToe::makeTurn()
     }
     while(board.getCell(marker) != -1 || marker < 0 || marker > 9);
 
-    board.updateBoard(getCurrentPlayer(),marker);
+    addMove(getCurrentPlayer(),marker);
+}
 
+void TicTacToe::addMove(int player, int marker)
+{
+	board.updateBoard(player, marker);
 }
 
 int TicTacToe::checkWin()

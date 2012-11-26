@@ -14,6 +14,7 @@ class TicTacToe : public Game
         void makeTurn();
         int checkWin();
         void endGame(int winner);
+	void addMove(int player, int marker);
     private:
         Board board;
         static const int winningStates[8];

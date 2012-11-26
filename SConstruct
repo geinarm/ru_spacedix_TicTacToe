@@ -57,7 +57,8 @@ test_sources = Glob('test/*.cpp') + [
                 'src/counter.o',
                 'src/Player.o',
                 'src/Game.o',
-                'src/Board.o'
+                'src/Board.o',
+		'src/TicTacToe.o'
                 ]
 
 
