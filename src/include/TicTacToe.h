@@ -13,9 +13,10 @@ class TicTacToe : public Game
         void startGame();
         void makeTurn();
         int checkWin();
-        void endGame();
+        void endGame(int winner);
     private:
         Board board;
+        int winningStates[8];
 };
 
 #endif // TICTACTOE_H

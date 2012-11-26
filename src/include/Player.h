@@ -17,7 +17,6 @@ class Player
 	private:
     	int score;
     	string name;
-    	string id;
 };
 
 #endif // PLAYER_H

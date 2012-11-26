@@ -26,8 +26,9 @@ void Game::nextPlayer()
     currentPlayer = ((currentPlayer +1) % playerCount);
 }
 
-void Game::endGame()
-{}
+void Game::endGame(int winner)
+{
+}
 
 int Game::getCurrentPlayer(){
     return currentPlayer;

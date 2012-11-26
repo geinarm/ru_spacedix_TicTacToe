@@ -21,15 +21,18 @@ void GameRunner::setGame(Game* g)
 void GameRunner::run()
 {
     std::cout << "run game\n";
+
     game->startGame();
 
     int winnerIndex = -1;
-    while(winnerIndex == -1){
+
+    while(winnerIndex == -1)
+    {
         game->makeTurn();
         winnerIndex = game->checkWin();
 
         game->nextPlayer();
     }
 
-    game->endGame();
+    game->endGame(winnerIndex);
 }

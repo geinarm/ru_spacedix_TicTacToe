@@ -10,11 +10,12 @@
 #include <cstring>
 #include "include/counter.h"
 #include "include/GameRunner.h"
+#include "include/TicTacToe.h"
 
 int main(int argc, const char * argv[])
 {
     GameRunner gameRunner;
-    counter* game = new counter;
+    TicTacToe* game = new TicTacToe;
 
     gameRunner.setGame(game);
     gameRunner.run();
