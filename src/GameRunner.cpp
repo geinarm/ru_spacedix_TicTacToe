@@ -22,8 +22,6 @@ void GameRunner::setGame(Game* g)
 
 void GameRunner::run()
 {
-    std::cout << "run game\n";
-
     game->startGame();
 
     int winnerIndex = -1;

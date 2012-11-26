@@ -52,7 +52,8 @@ void TicTacToe::makeTurn()
 
     board.printBoard();
 
-    cout << "Player" << getCurrentPlayer()+1 << endl;
+    //cout << "Player" << getCurrentPlayer()+1 << endl;
+    cout << players[getCurrentPlayer()].getName() << endl;
     cout << "Where do you want to place your marker:";
     do
     {
@@ -89,5 +90,5 @@ int TicTacToe::checkWin()
 
 void TicTacToe::endGame(int winner)
 {
-    cout << winner;
+    cout << "Winner: " << players[winner].getName() << endl;
 }

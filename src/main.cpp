@@ -22,7 +22,6 @@ int main(int argc, const char * argv[])
     gameRunner.setGame(game);
     gameRunner.run();
 
-    cout << "hello world";
     return 0;
 }
 
