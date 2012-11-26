@@ -15,9 +15,9 @@ class Game
         virtual void endGame(int winner);
         virtual int getCurrentPlayer();
         virtual int getPlayerCount();
+        void setCurrentPlayer(int index);
+        void setPlayerCount(int count);
     protected:
-        virtual void setCurrentPlayer(int index);
-        virtual void setPlayerCount(int count);
         int currentPlayer;
 		int playerCount;
 		Player *players;

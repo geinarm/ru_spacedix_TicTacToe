@@ -7,10 +7,10 @@
 
 
 TEST( Player, checkScore ) {
-    Player score;
-    EXPECT_EQ(getScore(), 0 );
-    addScore();
-    EXPECT_EQ(getScore(), 1 );
+    Player player;
+    EXPECT_EQ(player.getScore(), 0 );
+    player.addScore();
+    EXPECT_EQ(player.getScore(), 1 );
 }
 
 #endif

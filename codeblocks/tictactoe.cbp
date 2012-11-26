@@ -37,8 +37,7 @@
 					<Add directory="../gtest/include" />
 				</Compiler>
 				<Linker>
-					<Add library="../../../../../usr/lib/libgtest.a" />
-					<Add library="../../../../../usr/lib/libgtest_main.a" />
+					<Add library="../lib/libgtest.a" />
 				</Linker>
 			</Target>
 		</Build>
@@ -56,18 +55,45 @@
 		<Unit filename="../src/TicTacToe.cpp" />
 		<Unit filename="../src/TicTacToePlayer.cpp" />
 		<Unit filename="../src/counter.cpp" />
-		<Unit filename="../src/include/Board.h" />
-		<Unit filename="../src/include/Game.h" />
-		<Unit filename="../src/include/GameRunner.h" />
-		<Unit filename="../src/include/Player.h" />
-		<Unit filename="../src/include/TicTacToe.h" />
-		<Unit filename="../src/include/TicTacToePlayer.h" />
-		<Unit filename="../src/include/counter.h" />
-		<Unit filename="../src/main.cpp" />
+		<Unit filename="../src/include/Board.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../src/include/Game.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../src/include/GameRunner.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../src/include/Player.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../src/include/TicTacToe.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../src/include/TicTacToePlayer.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../src/include/counter.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../src/main.cpp">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
 		<Unit filename="../test/testCounter.cpp">
 			<Option target="tictactoe_test" />
 		</Unit>
 		<Unit filename="../test/test_Game.cpp">
+			<Option target="tictactoe_test" />
+		</Unit>
+		<Unit filename="../test/test_Player.cpp">
 			<Option target="tictactoe_test" />
 		</Unit>
 		<Extensions>
