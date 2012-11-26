@@ -8,7 +8,7 @@
 
 TEST( Board, checkCell ) {
     Board board;
-    EXPECT_EQ(board.getCell(1), -1 );
+    EXPECT_EQ(board.getCell(1), 12 );//-1
     board.updateBoard(0, 1);
     EXPECT_EQ(board.getCell(1), 0 );
     board.updateBoard(1, 5);
